@@ -2,8 +2,36 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
+    <!-- Exercise 1: Simulates how declarative rendering works -->
     <div id="app">
         {{ message }}
+    </div>
+    <div id="app-2">
+        <span v-bind:title="message">
+            Hover your mounse over me for a few seconds
+            to see my dynamically bound title!
+        </span>
+    </div>
+    <!-- Exercise 2: Conditional (v-if) and Loops -->
+    <div id="app-3">
+        <span v-if="seen">Now you see me</span>
+    </div>
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+            <!-- New object can be added to array with vueObject.arrayName.push ({Object: 'data'}) from console -->
+        </ol>
+    </div>
+    <!-- Exercise 3: Handling User Input -->
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+    <div id="app-6">
+        <p>{{ message }}</p>
+        <input v-model="message">e
     </div>
     <script src="index.js"></script>
 </body>
