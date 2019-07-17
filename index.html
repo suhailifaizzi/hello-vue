@@ -31,7 +31,17 @@
     </div>
     <div id="app-6">
         <p>{{ message }}</p>
-        <input v-model="message">e
+        <input v-model="message">
+    </div>
+    <!-- Exercise 4: Composing with Components -->
+    <div id="app-7">
+        <ol>
+            <todo-item
+              v-for = "item in groceryList"
+              v-bind:todo = "item"
+              v-bind:key = "item.id"
+            ></todo-item>
+        </ol>
     </div>
     <script src="index.js"></script>
 </body>
