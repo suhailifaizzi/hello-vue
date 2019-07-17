@@ -1,0 +1,21 @@
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- Exercise 1 : Bind class to manipulate div (dynamically toggle class) -->
+    <!-- Any additional Class Binding will be appended to the class in the tag -->
+    <div
+        id="class-binding"
+        class="static"
+        v-bind:class="classObject">
+            Div class is active.
+    </div>
+    <!-- Exercise 2 : Array Syntax -->
+    <!-- <div id="array-syntax" v-bind:class="[activeClass, errorClass]">Array Syntax</div> -->
+    <div id="array-syntax" v-bind:class="[isActive ? activeClass : '', errorClass]">Array Syntax</div>
+    <!-- Exercise 3 : Bind object to style div -->
+    <div id="style-binding" v-bind:style="styleObject">{{ styleObject.message }}</div>
+    <script src="inline-styles.js"></script>
+</body>
+</html>
