@@ -9,6 +9,49 @@
         <p>Original message: "{{ message }}"</p>
         <p>Computed reverse message: "{{ reversedMessage }}"</p>
     </div>
+    <!-- Exercise 2: Computed (Only run function when reactive property, such as message changes) VS Method -->
+    <div id="computed-cached-unless-changed">
+        <h1>Shows that Date won't update realtime because Date.now() is not reactive</h1>
+        <p>Date.now is static, hence computed won't rerun function</p>
+        <p>First run: {{ computedDateNow }}</p>
+        <p>Second run: {{ computedDateNow }}</p>
+        <p>Method case</p>
+        <p>First run: {{ methodsDateNow ()}}</p>
+        <p>Second run: {{ methodsDateNow ()}}</p>
+    </div>
+    <!-- Exercise 3: Computed VS Watched Property -->
+    <div id="computed-and-watch">
+        <h1>Watch example</h1>
+        <p>First Name: {{ firstName }}</p>
+        <p>Last Name: {{ lastName }}</p>
+        <p>Full Name: {{ fullName }}</p>
+    </div>
+    <!-- Exercise 4: Computed setters -->
+    <div id="computed-setters">
+        <h1>Using computed for setters and getters.</h1>
+        <h3>Use console to try out</h3>
+        <p>First name: {{ firstName }} </p>
+        <p>Last name: {{ lastName }}</p>
+        <p>Fullname (generated): {{ fullName }}</p>
+    </div>
+    <!-- Exercise 5: Watchers -->
+    <!-- Since there is already a rich ecosystem of ajax libraries    -->
+    <!-- and collections of general-purpose utility methods, Vue core -->
+    <!-- is able to remain small by not reinventing them. This also   -->
+    <!-- gives you the freedom to use what you're familiar with.      -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <div id="watchers">
+        <h1>Shows how to use watcher</h1>
+        <h3>To perform async operation</h2>
+        <h3>While limiting how often we perform it</h3>
+        <h3>And set intermediary states until we get final answer</h3>
+        <p>
+            Ask a yes/no question:
+            <input v-model="question">
+        </p>
+        <p>{{ answer }}</p>
+    </div>
     <script src="computed-and-watchers.js"></script>
 </body>
 </html>
